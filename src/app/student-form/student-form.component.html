@@ -1,0 +1,38 @@
+<div class="container">
+  <form #f="ngForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input required ngModel #name="ngModel" type="text" class="form-control" id="name" name="name">
+      <div class="alert alert-danger" *ngIf="name.touched && !name.valid">name is required.</div>
+    </div>
+    <div class="form-group">
+      <label for="name">Phone</label>
+      <input required ngModel #phone="ngModel" type="text" class="form-control" id="phone" name="phone">
+      <div class="alert alert-danger" *ngIf="phone.touched && !phone.valid">phone is required.</div>
+    </div>
+    <div class="form-group">
+      <label for="name">School</label>
+      <input required ngModel #school="ngModel"  type="text" class="form-control" id="school" name="school">
+      <div class="alert alert-danger" *ngIf="school.touched && !school.valid">school is required.</div>
+    </div>
+   
+    <div class="form-group">
+      <label for="contactMethod"></label>
+      <select name="contactMethod" id="contactMethod" class="form-control" ngModel >
+        <option value="">Choose...</option>
+          <option *ngFor="let c of contactMethod" [ngValue]="c">
+            {{c.name}}
+          </option>
+      </select>
+    </div>
+    <div class="checkbox">
+      <label >
+        <input type="checkbox" ngModel name="isSubscribed">Subscribe to mail list
+      </label>
+    </div>
+    <p>
+      {{ f.value | json}}
+    </p>
+    <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+  </form>
+</div>

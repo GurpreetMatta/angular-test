@@ -1,0 +1,10 @@
+<div [@openclosed]="isOpen ? 'open' : 'closed'" class="container">
+  <span>
+    <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+  </span>
+</div>
+ <span>
+    <button class="btn btn-success" (click)="toggle()">
+      submit
+    </button>
+  </span>

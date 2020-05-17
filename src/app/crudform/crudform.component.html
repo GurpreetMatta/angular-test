@@ -1,0 +1,9 @@
+<input type="text" class="form-control" placeholder="title" (keyup.enter)="createPost(title)" #title>
+<br>
+<br>
+
+<ul class="list-group">
+  <li @fade *ngFor="let post of posts" class="list-group-item">
+      <span (click)="update(post.id)">{{ post.title }}</span>  <button class="btn btn-primary float-right"  (click)="onDelete(post.id)">DELETE</button>  
+  </li>
+</ul>

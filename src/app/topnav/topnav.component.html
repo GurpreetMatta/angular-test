@@ -1,0 +1,53 @@
+<div class="container">
+  <ul class="nav nav-pills">
+
+    <li class="nav-item"><a class="nav-link" [class.active]="viewMode=='map'" (click)="viewMode='map'">Map View </a></li>
+    <li class="nav-item"><a class="nav-link" [class.active]="viewMode=='list'" (click)="viewMode='list'">List View</a></li>
+    <li class="nav-item"><a class="nav-link" [class.active]="viewMode=='login'" (click)="viewMode='login'">Login</a></li>
+    <li class="nav-item"><a class="nav-link" [class.active]="viewMode=='contact-form'" (click)="viewMode='contact-form'">Contact Form</a></li>
+    <li class="nav-item"><a class="nav-link" [class.active]="viewMode=='student-form'" (click)="viewMode='student-form'">Student Form</a></li>
+    <li class="nav-item"><a class="nav-link" [class.active]="viewMode=='signup'" (click)="viewMode='signup'">Signup</a></li>
+    <li class="nav-item"><a class="nav-link" [class.active]="viewMode=='crudform'" (click)="viewMode='crudform'">Crudform</a></li>
+  </ul>
+</div>
+<br><br>
+
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">
+    
+    <div class="container">
+      <h3>Map view Content</h3>
+      <ol>
+        <li *ngFor="let course of courses;index as i">
+        {{i}} -- {{course.name}}
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div *ngSwitchCase="'list'">
+    
+   <div class="container">
+    <h3>List view Content</h3>
+     <ul>
+       <li *ngFor="let course of courses">
+         {{course.name}}
+       </li>
+     </ul>
+   </div>
+  </div>
+  <div *ngSwitchCase="'login'">
+    <app-login-form></app-login-form><br><br>
+  </div>
+  <div *ngSwitchCase="'contact-form'">
+    <contact-form></contact-form>
+  </div>
+  <div *ngSwitchCase="'student-form'">
+    <student-form></student-form>
+  </div>
+  <div *ngSwitchCase="'signup'">
+    <signup></signup>
+  </div>
+  <div *ngSwitchCase="'crudform'">
+    <crudform></crudform>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<h4>{{keyUp}}</h4>
+<div class="container">
+  <input #demo type="text" (keyup.enter)="onkeyUp(demo.value)" />
+</div>
+<h4>{{post.isFavorite}}</h4>
+<app-favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChange($event)"></app-favorite>
+<!-- <h4>{{title}}</h4>
+
+<img [src]="src"/>
+
+<table> 
+  <tr> 
+      <th>Name</th> 
+      <th>Expense</th> 
+  </tr> 
+  <tr> 
+      <td>Sonu</td> 
+      <td>$10</td> 
+  </tr> 
+  <tr> 
+      <td>ABHI</td> 
+      <td>$8</td> 
+  </tr> 
+
+  <tr> 
+     
+      <td [attr.colspan]="colspan">Sum: $18</td> 
+  </tr> 
+</table> 
+
+<button class="btn btn-primary" [class.active]="isActive" >Button</button> -->
